@@ -10,7 +10,7 @@
   "keywords": [
     "SKY TV, MOVIE TRACKER"
   ],
-  "author": "Yuhigawa <PabloStreiski@outlook.com>",
+  "author": "Yuhigawa",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
