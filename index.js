@@ -7,7 +7,7 @@ const fs = require("fs");
 const fethHtml = require("./urlfetch");
 
 (async () => {
-    // TODO: track all day movies on the site, currently it catches movies broadcasting in your computer time.
+    // TODO: track all-day movies on the site, currently it catches movies broadcasting in your computer timestamp.
     const currentTime = new Date()
     const currentTimeString = currentTime.toString().split(" ");
     const matchUrlFormatTime =  `${currentTimeString[2]}-${currentTimeString[1]}-${currentTimeString[3]}/${currentTime.getHours().toString()}.00hs`;
@@ -31,7 +31,7 @@ const fethHtml = require("./urlfetch");
                 tempChannelName = channelName;
                 lista[channelName] = []
             } else {
-                // TODO: the last element(from the site) of each list don't append, have to fixe it.
+                // TODO: the last element(from the site) of each list don't append, have to fix it.
                 tr.eq(i).find('td').each((index, elem) => {
                     if(!$(elem).find('div').is('div')) {
                         let tempMovieName = $(elem).find('a').text().split("\n");
