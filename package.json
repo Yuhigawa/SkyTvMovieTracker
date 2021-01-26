@@ -14,8 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
-    "cheerio": "^1.0.0-rc.5",
-    "fs": "0.0.1-security"
+    "cheerio": "^1.0.0-rc.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
