@@ -7,6 +7,7 @@ const fs = require("fs");
 const fethHtml = require("./urlfetch");
 
 (async () => {
+    // TODO: track all day movies on the site, currently it catches movies broadcasting in your computer time.
     const currentTime = new Date()
     const currentTimeString = currentTime.toString().split(" ");
     const matchUrlFormatTime =  `${currentTimeString[2]}-${currentTimeString[1]}-${currentTimeString[3]}/${currentTime.getHours().toString()}.00hs`;
