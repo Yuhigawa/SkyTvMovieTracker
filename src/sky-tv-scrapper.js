@@ -2,7 +2,7 @@ const fs = require("fs");
 const cheerio = require("cheerio");
 const fethHtml = require("./assets/urlfetch");
 
-async function skyTvScrapper(writeFIle = False) {
+async function skyTvScrapper(writeJsonFile=False) {
     const slackHours = ["00.00hs", "02.00hs", "04.00hs", "06.00hs", "08.00hs", "10.00hs", "12.00hs", "14.00hs", "16.00hs", "18.00hs", "20.00hs", "22.00hs"];
     let lista = {};
     let data = null;
@@ -10,7 +10,7 @@ async function skyTvScrapper(writeFIle = False) {
     for(let i of slackHours) {
         data = await movieScrapper(i, lista)
 
-        if( writeFIle ) fs.writeFileSync("./src/data/skyTvScrapped.json", JSON.stringify(data))
+        if( writeJsonFile ) fs.writeFileSync("./src/data/skyTvScrapped.json", JSON.stringify(data))
     }
         
     return JSON.parse(JSON.stringify(data));
