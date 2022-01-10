@@ -11,5 +11,5 @@
 ~> cd SkyTvMovieTracker
 ~> npm install
 ~> npm start
-~> open skyTvScrapped.json
+~> open ./src/data/skyTvScrapped.json
 ```
