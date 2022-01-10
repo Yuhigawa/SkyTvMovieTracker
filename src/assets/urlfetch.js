@@ -8,6 +8,8 @@ const fetchHtml = async url => {
         console.error(
             `ERROR: An error occurred while trying to fetch the URL: ${url}`
         );
+
+        throw new Error(`Couldn\'t connect to ${url}`);
     }
 };
 

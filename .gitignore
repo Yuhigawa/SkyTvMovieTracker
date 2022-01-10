@@ -1,2 +1,4 @@
 node_modules
 teste.json
+.vscode/launch.json
+package-lock.json
