@@ -13,7 +13,7 @@ async function skyTvScrapper(writeJsonFile=False) {
         if( writeJsonFile ) fs.writeFileSync("./src/data/skyTvScrapped.json", JSON.stringify(data))
     }
         
-    return JSON.parse(JSON.stringify(data));
+    return JSON.stringify(data);
 }
 
 async function movieScrapper(sliceOfSlackHour = null, lista = {}) {
