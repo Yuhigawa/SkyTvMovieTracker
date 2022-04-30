@@ -4,8 +4,8 @@
   "description": "Whitelist new movies of the year, and when it broadcast on one of Sky Tv channel; a notification will appear showing which time and channel the movie will broadcast",
   "main": "main.js",
   "scripts": {
-    "server": "node server.js",
-    "start": "node .",
+    "start": "node server.js",
+    "start:dev": "node .",
     "start:demon": "nodemon main.js",
     "deploy": "yarn build && gh-pages -d dist"
   },
