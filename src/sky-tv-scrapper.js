@@ -20,7 +20,9 @@ async function movieScrapper(sliceOfSlackHour = null, lista = {}) {
     const currentTime = new Date()
     const currentTimeString = currentTime.toString().split(" ");
     const isTimeCorrect = sliceOfSlackHour === null ? `${currentTime.getHours().toString()}.00hs` : `${sliceOfSlackHour}`
-    const matchUrlFormatTime = `${currentTimeString[2]}-${currentTimeString[1]}-${currentTimeString[3]}/${isTimeCorrect}`;
+
+    const getCurrentMonth = new Intl.DateTimeFormat('pt-BR', {month: 'short'}).format(currentTime).toLowerCase();
+    const matchUrlFormatTime = `${currentTimeString[2]}-${getCurrentMonth.slice(0, getCurrentMonth.length - 1)}-${currentTimeString[3]}/${isTimeCorrect}`;
 
     const url = "https://www.tvmap.com.br/SKY/" + matchUrlFormatTime;
     console.log("[ L I N K ] - ", url);
