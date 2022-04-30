@@ -31,6 +31,8 @@ server.get('/', async (req, res) => {
     }
 });
 
-server.listen(8080, () => {
+const port = process.env.PORT || 8080; 
+
+server.listen(port, () => {
     console.log('Running at http://localhost:8080');
 })
