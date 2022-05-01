@@ -5,23 +5,34 @@ const fs = require('fs');
 server.use(cors());
 
 const scrapper = require('./src/sky-tv-scrapper');
-let old_data = new Date().toString().split(" ")[2];
+let old_date = new Date()
+let old_date_day = old_date.toString().split(" ")[2];
 
 server.get('/', async (req, res) => {   
-    const new_date = new Date().toString().split(" ")[2];
+    const new_date = new Date();
+    const new_date_day = new_date.toString().split(" ")[2];
     
-    if( new_date !== old_data ) {
+    console.log('Old Date: ', old_date)
+    console.log('New Date: ', new_date)
+    
+    if( new_date_day !== old_date_day ) {
+        console.log('\n\tDifferent Day\n');
+
         const data = await scrapper(true);
-        res.json( data );
+        res.send( data );
     }
     else {
         try {
             const data = fs.readFileSync('./src/data/skyTvScrapped.json', {encoding:'utf8', flag:'r'});
 
             if( data.length <= 2 ){
+                console.log('\n\tSame Day Writing File\n');
+
                 const data = await scrapper(true);
-                res.json( data );
+                res.send( data );
             }
+
+            console.log('\n\tSame Day Reading File\n');
 
             res.send( data );
         } catch (error) {
