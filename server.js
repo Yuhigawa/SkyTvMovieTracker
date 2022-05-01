@@ -18,6 +18,9 @@ server.get('/', async (req, res) => {
     if( new_date_day !== old_date_day ) {
         console.log('\n\tDifferent Day\n');
 
+        old_date = new_date;
+        old_date_day = new_date_day;
+
         const data = await scrapper(true);
         res.send( data );
     }
